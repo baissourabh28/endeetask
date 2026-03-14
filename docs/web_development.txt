@@ -1,0 +1,89 @@
+Web Development
+===============
+
+Web development is the process of building and maintaining websites and web applications.
+
+Frontend Development
+--------------------
+
+Frontend is everything the user sees and interacts with in the browser.
+
+HTML (HyperText Markup Language):
+- Structure of web pages
+- Elements: headings, paragraphs, links, images, forms, tables
+- Semantic HTML: header, nav, main, section, article, footer
+
+CSS (Cascading Style Sheets):
+- Styling and layout of web pages
+- Selectors, properties, values
+- Box model: margin, border, padding, content
+- Flexbox: one-dimensional layout
+- CSS Grid: two-dimensional layout
+- Responsive design: media queries, mobile-first approach
+- CSS frameworks: Bootstrap, Tailwind CSS
+
+JavaScript:
+- Makes web pages interactive
+- DOM manipulation: selecting and modifying HTML elements
+- Event handling: click, submit, keypress
+- Fetch API / AJAX: making HTTP requests without page reload
+- ES6+ features: arrow functions, destructuring, spread, async/await
+- Frameworks: React, Vue, Angular, Svelte
+
+Backend Development
+-------------------
+
+Backend handles server-side logic, databases, and APIs.
+
+Languages: Python, Node.js, Java, Go, PHP, Ruby, C#
+
+Python frameworks:
+- Flask: lightweight, minimal, great for APIs
+- Django: full-featured, batteries included, ORM built-in
+- FastAPI: modern, fast, automatic docs, async support
+
+Node.js frameworks:
+- Express: minimal and flexible
+- NestJS: structured, TypeScript-first
+
+REST API:
+- GET: retrieve data
+- POST: create data
+- PUT/PATCH: update data
+- DELETE: remove data
+- Status codes: 200 OK, 201 Created, 400 Bad Request, 401 Unauthorized,
+  404 Not Found, 500 Internal Server Error
+
+Databases
+---------
+
+Relational (SQL): PostgreSQL, MySQL, SQLite
+- Tables, rows, columns
+- SQL queries: SELECT, INSERT, UPDATE, DELETE, JOIN
+
+NoSQL: MongoDB, Redis, Cassandra
+- Documents, key-value, wide-column, graph
+- Flexible schema, horizontal scaling
+
+ORM (Object Relational Mapper): SQLAlchemy, Django ORM, Prisma
+
+Authentication & Security
+--------------------------
+
+- JWT (JSON Web Tokens): stateless authentication
+- OAuth 2.0: third-party login (Google, GitHub)
+- HTTPS: encrypted communication via TLS/SSL
+- Password hashing: bcrypt, argon2
+- CORS: Cross-Origin Resource Sharing
+- SQL injection prevention: parameterized queries
+- XSS prevention: sanitize user input
+
+DevOps & Deployment
+--------------------
+
+- Docker: containerize applications
+- CI/CD: GitHub Actions, GitLab CI, Jenkins
+- Cloud: AWS, Google Cloud, Azure, Vercel, Heroku
+- Nginx / Apache: web servers and reverse proxies
+- Load balancing: distribute traffic across servers
+- CDN: Content Delivery Network for static assets

@@ -1,0 +1,26 @@
+HNSW stands for Hierarchical Navigable Small World. It is a graph-based algorithm for approximate
+nearest neighbor (ANN) search in high-dimensional vector spaces.
+
+The algorithm builds a multi-layer graph where each node represents a vector. Higher layers contain
+fewer nodes and act as express highways for fast traversal. Lower layers are denser and provide
+fine-grained search precision.
+
+During search, the algorithm starts at the top layer and greedily navigates toward the query vector,
+descending layer by layer until it reaches the bottom layer where the final candidates are collected.
+
+Key parameters:
+- M: the number of bidirectional links per node. Higher M improves recall but increases memory usage.
+- ef_construction: the size of the dynamic candidate list during index construction. Higher values
+  improve index quality at the cost of build time.
+- ef_search: the size of the candidate list during search. Higher values improve recall at the cost
+  of query latency.
+
+HNSW achieves sub-linear search complexity, making it practical for millions of vectors.
+Endee implements HNSW with support for multiple quantization levels to reduce memory footprint
+while maintaining high recall. SIMD instructions (AVX2, AVX512, NEON, SVE2) are used to
+accelerate distance computations.
+
+Space types supported:
+- cosine: cosine similarity (normalized dot product)
+- l2: Euclidean distance
+- ip: inner product (dot product)

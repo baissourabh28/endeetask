@@ -1,0 +1,103 @@
+Python Programming
+==================
+
+Python is a high-level, interpreted, general-purpose programming language known for its
+simplicity and readability. Created by Guido van Rossum in 1991.
+
+Core Data Types
+---------------
+
+- int: whole numbers (1, 42, -7)
+- float: decimal numbers (3.14, -0.5)
+- str: text ("hello", 'world')
+- bool: True or False
+- list: ordered mutable collection [1, 2, 3]
+- tuple: ordered immutable collection (1, 2, 3)
+- dict: key-value pairs {"name": "Alice", "age": 30}
+- set: unordered unique values {1, 2, 3}
+
+Control Flow
+------------
+
+if / elif / else: conditional execution
+for loop: iterate over sequences
+while loop: repeat while condition is true
+break / continue: control loop execution
+try / except / finally: exception handling
+
+Functions
+---------
+
+def greet(name):
+    return f"Hello, {name}!"
+
+Lambda functions: small anonymous functions
+    square = lambda x: x ** 2
+
+*args: variable positional arguments
+**kwargs: variable keyword arguments
+Decorators: modify function behavior (@staticmethod, @property, custom)
+
+Object-Oriented Programming
+----------------------------
+
+class Animal:
+    def __init__(self, name):
+        self.name = name
+    def speak(self):
+        return f"{self.name} makes a sound"
+
+class Dog(Animal):
+    def speak(self):
+        return f"{self.name} barks"
+
+Key OOP concepts: inheritance, encapsulation, polymorphism, abstraction
+
+List Comprehensions
+-------------------
+
+squares = [x**2 for x in range(10)]
+evens = [x for x in range(20) if x % 2 == 0]
+matrix = [[i*j for j in range(3)] for i in range(3)]
+
+Common Built-in Functions
+--------------------------
+
+len(), range(), enumerate(), zip(), map(), filter(), sorted(), reversed()
+min(), max(), sum(), abs(), round(), type(), isinstance()
+open() for file I/O
+
+Popular Libraries
+-----------------
+
+- numpy: numerical computing, arrays
+- pandas: data manipulation and analysis
+- matplotlib / seaborn: data visualization
+- requests: HTTP requests
+- flask / fastapi: web frameworks
+- sqlalchemy: database ORM
+- pytest: testing framework
+- pathlib: file system paths
+- datetime: date and time handling
+- json: JSON encoding/decoding
+- os / sys: operating system interface
+
+Python Best Practices
+---------------------
+
+- Follow PEP 8 style guide
+- Use virtual environments (venv, conda)
+- Write docstrings for functions and classes
+- Use type hints for better code clarity
+- Handle exceptions specifically, not bare except
+- Use context managers (with statement) for resources
+- Write unit tests with pytest
+
+Async Programming
+-----------------
+
+Python supports asynchronous programming with asyncio.
+async def fetch_data():
+    await some_io_operation()
+
+Used for: web servers, API calls, database queries, concurrent I/O tasks.

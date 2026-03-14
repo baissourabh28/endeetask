@@ -1,0 +1,35 @@
+Retrieval Augmented Generation (RAG) is an AI architecture pattern that improves the quality
+of large language model (LLM) responses by grounding them in relevant external knowledge.
+
+The core problem RAG solves: LLMs have a fixed knowledge cutoff and cannot access private or
+domain-specific information. RAG bridges this gap by retrieving relevant documents at query
+time and injecting them into the LLM prompt as context.
+
+The RAG pipeline has three main stages:
+
+1. Ingestion (offline):
+   - Documents are split into chunks (typically 200-500 characters with overlap)
+   - Each chunk is converted to a dense embedding vector using an embedding model
+   - Vectors are stored in a vector database (like Endee) along with the original text as metadata
+
+2. Retrieval (online, per query):
+   - The user question is embedded using the same embedding model
+   - The vector database performs approximate nearest neighbor search
+   - The top-k most semantically similar chunks are returned
+
+3. Generation (online, per query):
+   - Retrieved chunks are assembled into a context string
+   - A prompt is constructed: system instructions + context + user question
+   - The LLM generates an answer grounded in the retrieved context
+
+Key design decisions in RAG:
+- Chunk size: smaller chunks are more precise but lose surrounding context; larger chunks
+  provide more context but may dilute relevance
+- Overlap: overlapping chunks prevent important information from being split across boundaries
+- Embedding model: determines the quality of semantic similarity matching
+- Top-k: how many chunks to retrieve; more chunks provide richer context but increase
+  prompt length and LLM cost
+- Filtering: metadata filters can restrict retrieval to specific document subsets
+
+RAG is widely used in enterprise search, customer support bots, code assistants,
+document Q&A systems, and AI agents that need access to up-to-date or private knowledge.

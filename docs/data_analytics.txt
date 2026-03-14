@@ -1,0 +1,89 @@
+Data Analytics Overview
+========================
+
+Data analytics is the process of examining raw data to draw conclusions and insights.
+It is widely used in business, science, healthcare, and technology to make data-driven decisions.
+
+Types of Data Analytics
+-----------------------
+
+1. Descriptive Analytics
+   Answers "What happened?" by summarizing historical data.
+   Examples: sales reports, website traffic summaries, monthly revenue charts.
+
+2. Diagnostic Analytics
+   Answers "Why did it happen?" by finding root causes.
+   Examples: identifying why sales dropped in Q3, finding which product caused returns.
+
+3. Predictive Analytics
+   Answers "What will happen?" using statistical models and machine learning.
+   Examples: forecasting demand, predicting customer churn, stock price prediction.
+
+4. Prescriptive Analytics
+   Answers "What should we do?" by recommending actions.
+   Examples: dynamic pricing, route optimization, personalized recommendations.
+
+Time Series Analysis
+--------------------
+
+Time series analysis is a technique for analyzing data points collected at regular time intervals.
+It is used to identify trends, seasonal patterns, cycles, and irregular fluctuations.
+
+Key concepts in time series:
+- Trend: the long-term direction of the data (upward or downward)
+- Seasonality: repeating patterns at fixed intervals (daily, weekly, yearly)
+- Noise: random variation that cannot be explained by the model
+- Stationarity: a time series is stationary when its mean and variance are constant over time
+
+Common time series methods:
+- Moving Average (MA): smooths data by averaging over a sliding window
+- ARIMA (AutoRegressive Integrated Moving Average): combines autoregression, differencing, and moving averages
+- Exponential Smoothing (ETS): gives more weight to recent observations
+- LSTM (Long Short-Term Memory): a deep learning approach for sequential data
+
+Time series is used in finance (stock prices), weather forecasting, IoT sensor data, and web traffic analysis.
+
+Data Preprocessing
+------------------
+
+Before analysis, raw data must be cleaned and prepared:
+- Handling missing values: fill with mean, median, or use interpolation
+- Removing duplicates: eliminate repeated records
+- Normalization: scale values to a common range (0 to 1)
+- Encoding categorical variables: convert text labels to numbers
+- Feature engineering: create new meaningful columns from existing data
+
+Key Metrics in Data Analytics
+------------------------------
+
+- Mean: average value of a dataset
+- Median: middle value when data is sorted
+- Standard Deviation: measures how spread out values are
+- Correlation: measures the relationship between two variables (-1 to +1)
+- Variance: average of squared differences from the mean
+- Percentile: value below which a percentage of data falls
+
+Tools Used in Data Analytics
+-----------------------------
+
+- Python: pandas, numpy, matplotlib, scikit-learn, statsmodels
+- SQL: querying and aggregating structured data
+- Tableau / Power BI: visual dashboards and reporting
+- Apache Spark: large-scale distributed data processing
+- Jupyter Notebook: interactive data exploration environment
+
+Machine Learning in Analytics
+------------------------------
+
+Machine learning extends analytics by building models that learn from data:
+- Supervised learning: trains on labeled data (classification, regression)
+- Unsupervised learning: finds patterns without labels (clustering, dimensionality reduction)
+- Reinforcement learning: learns by trial and error with rewards
+
+Common algorithms:
+- Linear Regression: predicts continuous values
+- Logistic Regression: predicts binary outcomes
+- Decision Trees: tree-based classification and regression
+- Random Forest: ensemble of decision trees for better accuracy
+- K-Means Clustering: groups data into k clusters based on similarity
+- Principal Component Analysis (PCA): reduces dimensions while preserving variance

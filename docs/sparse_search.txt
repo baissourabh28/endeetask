@@ -1,0 +1,29 @@
+Sparse vector search is a retrieval technique where documents and queries are represented as
+sparse vectors — vectors where most values are zero, with non-zero weights only for relevant terms.
+
+In Endee, sparse search is implemented using a block-based inverted index stored in MDBX.
+Each term maps to a posting list of (doc_id, weight) pairs organized into fixed-size blocks
+of 65,535 documents each.
+
+The search algorithm computes dot-product similarity between the query sparse vector and all
+indexed document vectors. It uses a streaming approach that processes posting lists in
+document-ID order, accumulating scores in a dense buffer window of configurable size
+(default 10,000 documents per batch).
+
+Pruning optimization: when the result heap is full, the algorithm can skip ahead in the
+longest posting list if its upper bound score cannot beat the current minimum in the heap.
+This significantly reduces the number of entries that need to be scored.
+
+Quantization: by default, posting list weights are quantized to uint8 relative to the
+block-local maximum value. This reduces storage by 4x compared to float32 while preserving
+most of the retrieval quality. A compile-time flag NDD_INV_IDX_STORE_FLOATS disables
+quantization for maximum precision.
+
+Hybrid search combines dense HNSW search with sparse inverted index search, allowing
+retrieval systems to benefit from both semantic understanding (dense) and term-level
+precision (sparse). This is particularly useful for domain-specific corpora where
+exact keyword matching matters alongside semantic similarity.
+
+Tombstone deletion: when a document is deleted, its entries in the posting list are marked
+with a zero value (tombstone) rather than immediately removed. Compaction occurs automatically
+when the tombstone ratio in a block exceeds 10%.
